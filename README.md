@@ -3,7 +3,7 @@ This repository contains all the information gathered during a five day workshop
 
 ## DAY 1
 ### INTRODUCTION TO FPGA
-    Field Programmable Logic Array (FPGA) is a reprogrammable IC which can be designed and configured by the user. Configuration can be specified using a Hardware Description Language (HDL) like Verilog, VHDL or High-level languages like C,C++,Python
+    Field Programmable Logic Array (FPGA) is a reprogrammable IC which can be designed and configured by the user. .Configuration can be specified using a Hardware Description Language (HDL) like Verilog, VHDL or High-level languages like C,C++,Python
 #### ASIC Vs FPGA 
 
 ## REFERENCES
