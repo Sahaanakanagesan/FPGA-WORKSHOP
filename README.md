@@ -124,10 +124,10 @@ Next comes the Elaboration step which performs the following:
 - Linting checks in the code
 - Deduction of logic from the RTL design
 - Building of data structures
-- Application of constraints if present
+- Application of constraints if present \
 Once eloboration is done the elaborated design can be viewed as follows:
 ![2_rtl_schem_counter png](https://user-images.githubusercontent.com/52970851/208243021-2f679470-fa9f-4a77-8eda-34abc01ff4c2.jpg)
-
+### I/O PLANNING 
 
 ## REFERENCES
 
