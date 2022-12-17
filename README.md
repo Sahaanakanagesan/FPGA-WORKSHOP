@@ -92,7 +92,26 @@ else
  end 
 endmodule
 ```
-
+### TEST BENCH
+```
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+//    TEST BENCH WITH 4-BIT COUNTER
+//////////////////////////////////////////////////////////////////////////////////
+module test_counter();
+reg clk,reset;
+wire [3:0] out;
+counter_clk_div dut(clk,reset,out);
+initial begin
+clk=0;
+reset=1;
+#20;
+reset=0;
+end
+always
+#5 clk=~clk;    
+endmodule
+```
 ## REFERENCES
 
 ## ACKNOWLEDGEMENTS
