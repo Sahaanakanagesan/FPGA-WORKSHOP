@@ -1,5 +1,5 @@
 # FPGA-WORKSHOP
-This repository contains all the information gathered during a five day workshop on [ FPGA - Fabric, Design and Architecture by VSD ](https://www.vlsisystemdesign.com/fpga/) conducted from 14/12/2022 to 16/12/2022 which covers tools like Xilinx Vivado, Open FPGA, VTR, VPR and SOFA
+This repository contains all the information gathered during a five day workshop on [ FPGA - Fabric, Design and Architecture by VSD ](https://www.vlsisystemdesign.com/fpga/) conducted from 14/12/2022 to 18/12/2022 which covers tools like Xilinx Vivado, Open FPGA, VTR, VPR and SOFA
 
 ## DAY 1 - BASICS OF FPGA & XILINX VIVADO
 ### INTRODUCTION TO FPGA
@@ -35,7 +35,7 @@ The basic components of a FPGA are as follows
 <br> Along with these components it has DSP and Multiplier blocks and Configuration Memory for synthesizing a design and generating bitstream. Bitstream consists of information regarding the connectivity between CLBs, I/O cells and also the logic to be implemented. 
 ### FPGA DESIGN METHODOLOGY
 ![DESIGN METHOD](https://user-images.githubusercontent.com/52970851/208065160-47c3f771-95fb-4d4b-a0a1-e0d39c0f5108.png)
-### BASYS3
+### BASYS3 FPGA BOARD
 
 
 
