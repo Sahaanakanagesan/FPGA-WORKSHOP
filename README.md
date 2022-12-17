@@ -21,6 +21,7 @@ Field Programmable Gate Array (FPGA) is a reprogrammable IC which can be designe
 - High performance computing
 ### ARCHITECTURE
 The following picture shows the basic architecture of a FPGA.
+
 ![fpga arch](https://user-images.githubusercontent.com/52970851/208061986-016f74aa-3f6d-4e76-b300-1692e674142e.jpg)
 
 The basic components of a FPGA are as follows
@@ -36,9 +37,11 @@ The basic components of a FPGA are as follows
 <br> Along with these components it has DSP and Multiplier blocks and Configuration Memory for synthesizing a design and generating bitstream. Bitstream consists of information regarding the connectivity between CLBs, I/O cells and also the logic to be implemented. 
 ### FPGA DESIGN METHODOLOGY
 The following snippet explains the flow of FPGA design methodology
+
 ![DESIGN METHOD](https://user-images.githubusercontent.com/52970851/208065160-47c3f771-95fb-4d4b-a0a1-e0d39c0f5108.png)
 ### BASYS3 FPGA BOARD
-Basys3 FPGA board with its callouts is shown in the picture below
+Basys3 FPGA board with its callouts is shown in the picture below.
+
 ![basys3_board](https://user-images.githubusercontent.com/52970851/208233474-e25bf0c9-f168-4e95-af06-f863bb5d9b91.png)
 |CALL OUT|COMPONENT DESCRIPTION|CALL OUT|DESCRIPTION|
 |-------|-------|-------|-------|
@@ -112,6 +115,20 @@ always
 #5 clk=~clk;    
 endmodule
 ```
+### BEHAVIOURAL SIMULATION
+The following snippet indicates the behavioural simulation of the 4-bit Up counter with 100MHz source clock.
+
+![1_beh_sim](https://user-images.githubusercontent.com/52970851/208242060-9c1c6ce3-3844-4395-93f3-3eac6844ec6d.png)
+### ELABORATION
+Next comes the Elaboration step which performs the following: 
+- Linting checks in the code
+- Deduction of logic from the RTL design
+- Building of data structures
+- Application of constraints if present
+Once eloboration is done the elaborated design can be viewed as follows:
+![2_rtl_schem_counter png](https://user-images.githubusercontent.com/52970851/208243021-2f679470-fa9f-4a77-8eda-34abc01ff4c2.jpg)
+
+
 ## REFERENCES
 
 ## ACKNOWLEDGEMENTS
