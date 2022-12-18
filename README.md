@@ -159,11 +159,28 @@ Constraints files act as a guide for the FPGA Synthesis and Implementation proce
 - Install SOFA using the command ``` git clone https://github.com/lnis-uofu/SOFA.git ```
 - Change the directory to QLSOFA HD design using the command ``` cd FPGA1212_QLSOFA_HD_PNR ```
 - To create your own design, Copy your verilog file FPGA1212_QLSOFA_HD_task/micro_benchmark directory and modify ``` FPGA1212_QLSOFA_HD_task/config/task_simulation.conf file ```
+-  (Note: ```For saving the verilog file: you can also have your verilog file in FPGA1212_QLSOFA_HD_ task/BENCHMARK and along with it save the testbench and constraints file in the same folder```)
 - To run the OpenFPGA use ``` make runOpenFPGA ``` from the FPGA1212_QLSOFA_HD_PNR directory
 - The set of output files are available under FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/latest/vpr_arch/counter/MIN_ROUTE_CHAN_WIDTH
 - To view the utilization report of the counter open the vpr_stdout.log
+### COUNTER-AREA
 &ensp; The utilization report of the counter is shown in the snippets below: \
 ![counter_area_day4 png](https://user-images.githubusercontent.com/52970851/208295002-3d0bbb50-b7ee-44a9-ae03-6dfddbd15cce.jpg)
+### COUNTER-TIMING
+-For performing Timing analysis, we need to create a constraint file as follows :
+```
+create_clock -period 20 clk
+set_input_delay -clock clk -max 0 [get_ports{*}]
+set_output_delay -clock clk -max 0 [get_ports{*}]
+```
+- Note: Be careful while giving the clock name. The name should match with the one given in the verilog file. Example: In counter.v clock is given as ```clk``` & so the same is given in constraints 
+- The next step is to edit generate_testbench.openfpga (using vim editor) which is available in the path /SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/generate_testbench.openfpga
+- Add the following line in the vpr command (i.e., we are adding the sdc file and we are mentioning it's path)
+- ``` -- sdc_file/home/sahaanaktnj/Desktop/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/BENCHMARK/counter ```
+- Save the file and ``` make runOpenFPGA ``` from the FPGA1212_QLSOFA_HD_PNR directory
+- 
+
+
 
 
 
