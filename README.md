@@ -134,7 +134,7 @@ In I/O planning the ports of the designed module are assigned with their FPGA pi
 ## DAY 3 - INTRODUCTION TO RISC-V CORE PROGRAMMING IN XILINX VIVADO
 ## DAY 4 - INTRODUCTION TO SOFA FPGA FABRIC IP
 ### SOFA - INTRODUCTION
-&ensp Skywater Opensource FPGAs(SOFA) are a series of open-source FPGA IPs that utilizes the open-source Skywater 130nm PDK and OpenFPGA framework. It has Open-source FPGA IP Library which contains architecture descriptions for the user to produce ready layouts. 
+&ensp;  Skywater Opensource FPGAs(SOFA) are a series of open-source FPGA IPs that utilizes the open-source Skywater 130nm PDK and OpenFPGA framework. It has Open-source FPGA IP Library which contains architecture descriptions for the user to produce ready layouts. 
 ## REFERENCES
 - Xilinx Vivado :https://docs.xilinx.com/r/en-US/ug888-vivado-design-flows-overview-tutorial
 
