@@ -169,7 +169,7 @@ Constraints files act as a guide for the FPGA Synthesis and Implementation proce
 ### COUNTER-TIMING
 -For performing Timing analysis, we need to create a constraint file as follows :
 ```
-create_clock -period 20 clk
+create_clock -period 35 clk
 set_input_delay -clock clk -max 0 [get_ports{*}]
 set_output_delay -clock clk -max 0 [get_ports{*}]
 ```
@@ -178,7 +178,12 @@ set_output_delay -clock clk -max 0 [get_ports{*}]
 - Add the following line in the vpr command (i.e., we are adding the sdc file and we are mentioning it's path)
 - ``` -- sdc_file/home/sahaanaktnj/Desktop/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/BENCHMARK/counter ```
 - Save the file and ``` make runOpenFPGA ``` from the FPGA1212_QLSOFA_HD_PNR directory
-- 
+- To view the timing reports(i.e., setup time report) open ```report_timing.setup.rpt``` which is in the path ```/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/latest/vpr_arch/counter/MIN_ROUTE_CHAN_WIDTH```
+The following picture describes the setup time report of the counter. Slack is positive i.e., the timing constraints are met
+![counter_timing_day4](https://user-images.githubusercontent.com/52970851/208309582-2c94ad73-1c20-409e-836d-43199577e837.png)
+Similarly the snippet shown below shows the hold time report of the counter
+![counter_hold_timing_day4](https://user-images.githubusercontent.com/52970851/208309678-03bd68e8-c7d5-42e8-be1e-5fb56e02cc63.png)
+
 
 
 
