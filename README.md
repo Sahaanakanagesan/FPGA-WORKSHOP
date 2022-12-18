@@ -183,6 +183,9 @@ The following picture describes the setup time report of the counter. Slack is p
 ![counter_timing_day4](https://user-images.githubusercontent.com/52970851/208309582-2c94ad73-1c20-409e-836d-43199577e837.png)
 Similarly the snippet shown below shows the hold time report of the counter
 ![counter_hold_timing_day4](https://user-images.githubusercontent.com/52970851/208309678-03bd68e8-c7d5-42e8-be1e-5fb56e02cc63.png)
+### COUNTER POST IMPLEMENTATION
+- For post synthesis add the line ```--gen_post_synthesis_netlist on``` to the vpr command of the ```generate_testbench.openfpga``` file 
+- Save the file and ``` make runOpenFPGA ``` from the FPGA1212_QLSOFA_HD_PNR directory
 
 
 
