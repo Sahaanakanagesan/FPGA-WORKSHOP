@@ -133,6 +133,7 @@ In I/O planning the ports of the designed module are assigned with their FPGA pi
 
 ## DAY 3 - INTRODUCTION TO RISC-V CORE PROGRAMMING IN XILINX VIVADO
 ## REFERENCES
+- Xilinx Vivado :https://docs.xilinx.com/r/en-US/ug888-vivado-design-flows-overview-tutorial
 
 ## ACKNOWLEDGEMENTS
 - [ Kunal Gosh ](https://github.com/kunalg123) Co-Founder, VLSI System Design
