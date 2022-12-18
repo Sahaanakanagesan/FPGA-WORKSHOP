@@ -147,6 +147,11 @@ In I/O planning the ports of the designed module are assigned with their FPGA pi
 |User I/O Pins|144|
 |Maximum I/O Speed|33MHz|
 |Core|1.8V|
+### Steps to install & work with SOFA
+- Install OpenFPGA
+- Install SOFA using the command ``` git clone https://github.com/lnis-uofu/SOFA.git ```
+- Change the directory to QLSOFA HD design using the command ``` cd FPGA1212_QLSOFA_HD_PNR ```
+- 
 ## REFERENCES
 - Xilinx Vivado : https://docs.xilinx.com/r/en-US/ug888-vivado-design-flows-overview-tutorial
 - SOFA : https://github.com/lnis-uofu/SOFA
