@@ -186,6 +186,13 @@ Similarly the snippet shown below shows the hold time report of the counter
 ### COUNTER POST IMPLEMENTATION
 - For post synthesis add the line ```--gen_post_synthesis_netlist on``` to the vpr command of the ```generate_testbench.openfpga``` file 
 - Save the file and ``` make runOpenFPGA ``` from the FPGA1212_QLSOFA_HD_PNR directory
+- The post synthesis files are saved in ```/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/run001/vpr_arch/counter/MIN_ROUTE_CHAN_WIDTH ```
+- Open Vivado and add this post_synthesis file along with the testbench file and primitives.v file 
+- Note: make sure that the clock name given in the post_synthesis file & primitives.v file are the same
+- Perform Behavioural simulation \ 
+The following snippet shows the behavioural simulation of the counter
+![post_impl_sim_day4](https://user-images.githubusercontent.com/52970851/208311909-c7baf85f-d482-44dd-8447-b268c0b3c7d9.png)
+
 
 
 
