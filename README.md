@@ -155,8 +155,9 @@ In I/O planning the ports of the designed module are assigned with their FPGA pi
 - To run the OpenFPGA use ``` make runOpenFPGA ``` from the FPGA1212_QLSOFA_HD_PNR directory
 - The set of output files are available under FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/latest/vpr_arch/counter/MIN_ROUTE_CHAN_WIDTH
 - To view the utilization report of the counter open the vpr_stdout.log
-&ensp; The utilization report of the counter is shown in the snippets below:
-![counter_area_day4 png](https://user-images.githubusercontent.com/52970851/208294899-95ed4e0a-394c-47d0-abb4-29a8addb1091.jpg)
+&ensp; The utilization report of the counter is shown in the snippets below: \
+![counter_area_day4 png](https://user-images.githubusercontent.com/52970851/208295002-3d0bbb50-b7ee-44a9-ae03-6dfddbd15cce.jpg)
+
 
 
 ## REFERENCES
