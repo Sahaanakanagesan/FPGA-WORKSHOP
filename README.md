@@ -151,7 +151,14 @@ In I/O planning the ports of the designed module are assigned with their FPGA pi
 - Install OpenFPGA
 - Install SOFA using the command ``` git clone https://github.com/lnis-uofu/SOFA.git ```
 - Change the directory to QLSOFA HD design using the command ``` cd FPGA1212_QLSOFA_HD_PNR ```
-- 
+- To create your own design, Copy your verilog file FPGA1212_QLSOFA_HD_task/micro_benchmark directory and modify ``` FPGA1212_QLSOFA_HD_task/config/task_simulation.conf file ```
+- To run the OpenFPGA use ``` make runOpenFPGA ``` from the FPGA1212_QLSOFA_HD_PNR directory
+- The set of output files are available under FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/latest/vpr_arch/counter/MIN_ROUTE_CHAN_WIDTH
+- To view the utilization report of the counter open the vpr_stdout.log
+&ensp; The utilization report of the counter is shown in the snippets below:
+![counter_area_day4 png](https://user-images.githubusercontent.com/52970851/208294899-95ed4e0a-394c-47d0-abb4-29a8addb1091.jpg)
+
+
 ## REFERENCES
 - Xilinx Vivado : https://docs.xilinx.com/r/en-US/ug888-vivado-design-flows-overview-tutorial
 - SOFA : https://github.com/lnis-uofu/SOFA
