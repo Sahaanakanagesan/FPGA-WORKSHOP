@@ -134,10 +134,23 @@ In I/O planning the ports of the designed module are assigned with their FPGA pi
 ## DAY 3 - INTRODUCTION TO RISC-V CORE PROGRAMMING IN XILINX VIVADO
 ## DAY 4 - INTRODUCTION TO SOFA FPGA FABRIC IP
 ### SOFA - INTRODUCTION
-&ensp;  Skywater Opensource FPGAs(SOFA) are a series of open-source FPGA IPs that utilizes the open-source Skywater 130nm PDK and OpenFPGA framework. It has Open-source FPGA IP Library which contains architecture descriptions for the user to produce ready layouts. 
+&emsp;  Skywater Opensource FPGAs(SOFA) are a series of open-source FPGA IPs that utilizes the open-source Skywater 130nm PDK and OpenFPGA framework. It has Open-source FPGA IP Library which contains architecture descriptions for the user to produce ready layouts. \
+&ensp; There are various High Density Embedded FPGAs available namely SOFA HD, QLSOFA HD and SOFA CHD. Out of these, QLSOFA HD design is used in this repository whose specifications are as follows:
+|Resoure/Capacity|QLSOFA HD|
+|-----|-----|
+|LUTs|1152|
+|Flip-Flops|2304|
+|Soft Adders|1152|
+|Routing Channel Width|60|
+|Maximum Configuration Speed|50MHz|
+|Maximum Operating Speed|50MHz|
+|User I/O Pins|144|
+|Maximum I/O Speed|33MHz|
+|Core|1.8V|
 ## REFERENCES
-- Xilinx Vivado :https://docs.xilinx.com/r/en-US/ug888-vivado-design-flows-overview-tutorial
-
+- Xilinx Vivado : https://docs.xilinx.com/r/en-US/ug888-vivado-design-flows-overview-tutorial
+- SOFA : https://github.com/lnis-uofu/SOFA
+- SOFA : https://github.com/lnis-uofu/SOFA
 ## ACKNOWLEDGEMENTS
 - [ Kunal Gosh ](https://github.com/kunalg123) Co-Founder, VLSI System Design
 - [ Nanditha Rao ](https://github.com/nandithaec) Assistant Professor, IIIT Bangalore
