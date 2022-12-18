@@ -130,6 +130,10 @@ Once eloboration is done the elaborated design can be viewed as follows:
 ### I/O PLANNING 
 In I/O planning the ports of the designed module are assigned with their FPGA pins and the IO standard is set to LVCMOS33 i.e., the supply voltage is set as 3-3.3V. The picture shown below describes the corresponding pins assigned to the module ports of the 4-bit counter. \
 ![3_IO_PLANNING](https://user-images.githubusercontent.com/52970851/208244468-b74ac7d8-a50d-49c1-b1c2-765f7ff1a6ec.jpg)
+&emsp; Next step : Save the pin assignments as .xdc file. The following picture shows the constraints.xdc file for the counter designed.
+### CONSTRAINTS
+### SYNTHESIS
+&emsp; 
 
 ## DAY 3 - INTRODUCTION TO RISC-V CORE PROGRAMMING IN XILINX VIVADO
 ## DAY 4 - INTRODUCTION TO SOFA FPGA FABRIC IP
