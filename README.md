@@ -192,6 +192,8 @@ Similarly the snippet shown below shows the hold time report of the counter
 - Perform Behavioural simulation \ 
 The following snippet shows the behavioural simulation of the counter
 ![post_impl_sim_day4](https://user-images.githubusercontent.com/52970851/208311909-c7baf85f-d482-44dd-8447-b268c0b3c7d9.png)
+### COUNTER POWER ANALYSIS
+/home/sahaanaktnj/Desktop/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/run001/vpr_arch/counter/MIN_ROUTE_CHAN_WIDTH
 
 
 
