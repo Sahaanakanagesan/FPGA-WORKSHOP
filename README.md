@@ -131,10 +131,13 @@ Once eloboration is done the elaborated design can be viewed as follows:
 In I/O planning the ports of the designed module are assigned with their FPGA pins and the IO standard is set to LVCMOS33 i.e., the supply voltage is set as 3-3.3V. The picture shown below describes the corresponding pins assigned to the module ports of the 4-bit counter. \
 ![3_IO_PLANNING](https://user-images.githubusercontent.com/52970851/208244468-b74ac7d8-a50d-49c1-b1c2-765f7ff1a6ec.jpg)
 &emsp; Next step : Save the pin assignments as .xdc file. The following picture shows the constraints.xdc file for the counter designed.
-### CONSTRAINTS
 ### SYNTHESIS
-&emsp; 
-
+&emsp; Synthesis is the process where the HDL is complied and the RTL-specified design is converted into a gate-level netlist. \
+The following snippet shows the synthesized design.
+![synthesized design_counter_day1](https://user-images.githubusercontent.com/52970851/208301173-a464b263-4b94-4c76-a012-e18e7bc34f9f.jpg)
+&emsp; The timing summary are shown as NA since there are no user specified constraints at present. Timing constraints are now set in the Constraints Wizard in Synthesis Tab. A 100MHz clock is set and the corresponding Tcl command is added in the constraints file.
+### CONSTRAINTS
+Constraints files act as a guide for the FPGA Synthesis and Implementation processes. They have information about the ports declaration and timing information like input/output delays and clock constraints. In simple words
 ## DAY 3 - INTRODUCTION TO RISC-V CORE PROGRAMMING IN XILINX VIVADO
 ## DAY 4 - INTRODUCTION TO SOFA FPGA FABRIC IP
 ### SOFA - INTRODUCTION
