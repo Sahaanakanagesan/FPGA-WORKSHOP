@@ -137,7 +137,24 @@ The following snippet shows the synthesized design.
 ![synthesized design_counter_day1](https://user-images.githubusercontent.com/52970851/208301173-a464b263-4b94-4c76-a012-e18e7bc34f9f.jpg)
 &emsp; The timing summary are shown as NA since there are no user specified constraints at present. Timing constraints are now set in the Constraints Wizard in Synthesis Tab. A 100MHz clock is set and the corresponding Tcl command is added in the constraints file.
 ### CONSTRAINTS
-Constraints files act as a guide for the FPGA Synthesis and Implementation processes. They have information about the ports declaration and timing information like input/output delays and clock constraints. In simple words
+Constraints files act as a guide for the FPGA Synthesis and Implementation processes. They have information about the ports declaration and timing information like input/output delays and clock constraints. In simple words it gives performance specfications so that the specifications can be met. \
+The constraints for this counter example is as follows:
+```
+set_property IOSTANDARD LVCMOS33 [get_ports {count[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {count[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {count[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {count[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports clk]
+set_property IOSTANDARD LVCMOS33 [get_ports reset]
+set_property PACKAGE_PIN L1 [get_ports {count[3]}]
+set_property PACKAGE_PIN P1 [get_ports {count[2]}]
+set_property PACKAGE_PIN L3 [get_ports {count[1]}]
+set_property PACKAGE_PIN P3 [get_ports {count[0]}]
+set_property PACKAGE_PIN W5 [get_ports clk]
+set_property PACKAGE_PIN R2 [get_ports reset]
+create_clock -period 10.000 -name clk -waveform {0.000 5.000} [get_ports clk]
+
+```
 ## DAY 3 - INTRODUCTION TO RISC-V CORE PROGRAMMING IN XILINX VIVADO
 ## DAY 4 - INTRODUCTION TO SOFA FPGA FABRIC IP
 ### SOFA - INTRODUCTION
