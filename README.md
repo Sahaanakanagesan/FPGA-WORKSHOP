@@ -132,6 +132,8 @@ In I/O planning the ports of the designed module are assigned with their FPGA pi
 ![3_IO_PLANNING](https://user-images.githubusercontent.com/52970851/208244468-b74ac7d8-a50d-49c1-b1c2-765f7ff1a6ec.jpg)
 
 ## DAY 3 - INTRODUCTION TO RISC-V CORE PROGRAMMING IN XILINX VIVADO
+## DAY 4 - INTRODUCTION TO SOFA FPGA FABRIC IP
+### SOFA - INTRODUCTION
 ## REFERENCES
 - Xilinx Vivado :https://docs.xilinx.com/r/en-US/ug888-vivado-design-flows-overview-tutorial
 
