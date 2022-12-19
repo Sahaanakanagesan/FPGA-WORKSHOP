@@ -191,6 +191,25 @@ RVMYTH is run on Xilinx Vivado from RTL design upto Bitstream generation for an 
 ### BEHAVIOURAL SIMULATION
 The snippet shown below indicates the behavioural simulation of the addition of integers 1 to 9.
 ![day3_risc_beh_simulation](https://user-images.githubusercontent.com/52970851/208368491-6cd2f671-0114-4c7d-8b62-b0634c140495.png)
+### ELABORATION
+The elaborated step is done and the I/O planning report (with standard LVCMOS33) is obtained as follows:
+![day3_risc_ioplan](https://user-images.githubusercontent.com/52970851/208370785-8f3a4f9d-143b-471e-9ffd-b953baba4d89.png)
+### SYNTHESIS
+With the elobaration being done, next step is the Synthesis. The picture shown below indicates the synthsized schematic of the design
+![day3_risc_synthesized_schematic](https://user-images.githubusercontent.com/52970851/208371199-a9821b70-f43e-4d68-b319-b777ca10292e.png)
+### CONSTRAINTS
+For obtaining the timing summary constraints for clock are given as follows and re-synthesis is done.
+```
+set_property PACKAGE_PIN W5 [get_ports clk]
+set_property PACKAGE_PIN R2 [get_ports reset] 
+set_property IOSTANDARD LVCMOS33 [get_ports clk]
+set_property IOSTANDARD LVCMOS33 [get_ports reset]
+create clock -period 10.000 -name clk -waveform {0.000 5.000} [get_ports clk] 
+set property C_CLK_INPUT FREQ HZ 300000000 [get_debug cores dbg_hub] 
+set property C_ENABLE_CLK_DIVIDER false [get_debug cores dbg_hub] 
+set property C USER SCAN CHAIN 1 [get debug cores dbg_hub]
+connect_debug_port dbg_hub/clk [get_nets clk_IBUF_BUFG]
+```
 
 ## DAY 4 - INTRODUCTION TO SOFA FPGA FABRIC IP
 ### SOFA - INTRODUCTION
