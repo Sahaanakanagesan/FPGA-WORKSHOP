@@ -155,6 +155,10 @@ set_property PACKAGE_PIN R2 [get_ports reset]
 create_clock -period 10.000 -name clk -waveform {0.000 5.000} [get_ports clk]
 
 ```
+## DAY 2 - OPENFPGA , VTR & VPR
+### VPR
+### VTR
+
 ## DAY 3 - INTRODUCTION TO RISC-V CORE PROGRAMMING IN XILINX VIVADO
 ## DAY 4 - INTRODUCTION TO SOFA FPGA FABRIC IP
 ### SOFA - INTRODUCTION
