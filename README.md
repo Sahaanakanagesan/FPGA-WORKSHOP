@@ -181,6 +181,15 @@ The snippet shown below gives the power analysis report of the implemented netli
 &emsp; The output files of VPR flow are .net, .place, .route and .log file
 
 ## DAY 3 - INTRODUCTION TO RISC-V CORE PROGRAMMING IN XILINX VIVADO
+RVMYTH is a RISC-V based five stage pipelined processor. The five stages are as follows:
+- Fetch
+- Decode
+- Execute
+- Memory access
+- Write \
+RVMYTH is run on Xilinx Vivado from RTL design upto Bitstream generation for an addition operation of integers from 1 to 9.
+### BEHAVIOURAL SIMULATION
+The snippet shown below indicates the behavioural simulation of the addition of integers 1 to 9.
 ## DAY 4 - INTRODUCTION TO SOFA FPGA FABRIC IP
 ### SOFA - INTRODUCTION
 &emsp;  Skywater Opensource FPGAs(SOFA) are a series of open-source FPGA IPs that utilizes the open-source Skywater 130nm PDK and OpenFPGA framework. It has Open-source FPGA IP Library which contains architecture descriptions for the user to produce ready layouts. \
@@ -236,6 +245,7 @@ The following snippet shows the behavioural simulation of the counter
 ![post_impl_sim_day4](https://user-images.githubusercontent.com/52970851/208311909-c7baf85f-d482-44dd-8447-b268c0b3c7d9.png)
 ### COUNTER POWER ANALYSIS
 /home/sahaanaktnj/Desktop/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/run001/vpr_arch/counter/MIN_ROUTE_CHAN_WIDTH
+## DAY 5 - RISC-V CORE ON CUSTOM SOFA FABRIC 
 
 
 
