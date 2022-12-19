@@ -271,9 +271,10 @@ The following snippet shows the behavioural simulation of the counter
 /home/sahaanaktnj/Desktop/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/run001/vpr_arch/counter/MIN_ROUTE_CHAN_WIDTH
 ## DAY 5 - RISC-V CORE ON CUSTOM SOFA FABRIC 
 The RISC-V based RVMyth is now implemented on the SOFA. The set of files which are needed to be modified are
-- task_simualtion.conf
-- generate_testbench.openfpga
-- vpr_arch.xml
+- task_simualtion.conf (Note: add your verilog file path in ``` [BENCHMARKS] ``` and change the top module name in ``` [SYNTHESIS_PARAM] ```)
+- generate_testbench.openfpga (Note: change the vpr command & remove the ``` --route_chan_width ${OPENFPGA_VPR_ROUTE_CHAN_WIDTH} ``` command)
+- vpr_arch.xml (Note: comment lines 154,155 & 256)
+Save all the files and ``` make runOpenFPGA ``` from the FPGA1212_QLSOFA_HD_PNR directory
 
 
 
