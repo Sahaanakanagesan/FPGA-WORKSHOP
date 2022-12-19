@@ -190,6 +190,8 @@ RVMYTH is a RISC-V based five stage pipelined processor. The five stages are as 
 RVMYTH is run on Xilinx Vivado from RTL design upto Bitstream generation for an addition operation of integers from 1 to 9.
 ### BEHAVIOURAL SIMULATION
 The snippet shown below indicates the behavioural simulation of the addition of integers 1 to 9.
+![day3_risc_beh_simulation](https://user-images.githubusercontent.com/52970851/208368491-6cd2f671-0114-4c7d-8b62-b0634c140495.png)
+
 ## DAY 4 - INTRODUCTION TO SOFA FPGA FABRIC IP
 ### SOFA - INTRODUCTION
 &emsp;  Skywater Opensource FPGAs(SOFA) are a series of open-source FPGA IPs that utilizes the open-source Skywater 130nm PDK and OpenFPGA framework. It has Open-source FPGA IP Library which contains architecture descriptions for the user to produce ready layouts. \
