@@ -210,7 +210,10 @@ set property C_ENABLE_CLK_DIVIDER false [get_debug cores dbg_hub]
 set property C USER SCAN CHAIN 1 [get debug cores dbg_hub]
 connect_debug_port dbg_hub/clk [get_nets clk_IBUF_BUFG]
 ```
-
+These constraints are added as .xdc file & resynthesis is done. Followed by it, is the implementation
+### IMPLEMENTATION
+## TIMING REPORT
+The following snippet s
 ## DAY 4 - INTRODUCTION TO SOFA FPGA FABRIC IP
 ### SOFA - INTRODUCTION
 &emsp;  Skywater Opensource FPGAs(SOFA) are a series of open-source FPGA IPs that utilizes the open-source Skywater 130nm PDK and OpenFPGA framework. It has Open-source FPGA IP Library which contains architecture descriptions for the user to produce ready layouts. \
@@ -267,6 +270,10 @@ The following snippet shows the behavioural simulation of the counter
 ### COUNTER POWER ANALYSIS
 /home/sahaanaktnj/Desktop/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/run001/vpr_arch/counter/MIN_ROUTE_CHAN_WIDTH
 ## DAY 5 - RISC-V CORE ON CUSTOM SOFA FABRIC 
+The RISC-V based RVMyth is now implemented on the SOFA. The set of files which are needed to be modified are
+- task_simualtion.conf
+- generate_testbench.openfpga
+- vpr_arch.xml
 
 
 
