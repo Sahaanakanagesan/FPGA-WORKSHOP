@@ -247,7 +247,7 @@ The following snippet shows the behavioural simulation of the counter
 - Xilinx Vivado : https://docs.xilinx.com/r/en-US/ug888-vivado-design-flows-overview-tutorial
 - OpenFPGA : https://openfpga.readthedocs.io/en/master/
 - SOFA : https://github.com/lnis-uofu/SOFA
-
+- VTR : https://docs.verilogtorouting.org/en/latest/
 ## ACKNOWLEDGEMENTS
 - [ Kunal Gosh ](https://github.com/kunalg123) Co-Founder, VLSI System Design
 - [ Nanditha Rao ](https://github.com/nandithaec) Assistant Professor, IIIT Bangalore
