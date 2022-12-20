@@ -315,6 +315,9 @@ The snippet shown below indicates the behavioural simulation of the addition of 
 ### ELABORATION
 The elaborated step is done and the I/O planning report (with standard LVCMOS33) is obtained as follows:
 ![day3_risc_ioplan](https://user-images.githubusercontent.com/52970851/208370785-8f3a4f9d-143b-471e-9ffd-b953baba4d89.png)
+### I/O PLANNING
+The picture shown below describes the I/O plam of the module. \
+
 ### SYNTHESIS
 With the elobaration being done, next step is the Synthesis. The picture shown below indicates the synthsized schematic of the design
 ![day3_risc_synthesized_schematic](https://user-images.githubusercontent.com/52970851/208371199-a9821b70-f43e-4d68-b319-b777ca10292e.png)
@@ -339,6 +342,9 @@ The following snippet shows the timing summary of the RISCV processor \
 #### POWER REPORT
 The power report obtained is shown in the picture below \
 ![day3_risc_power](https://user-images.githubusercontent.com/52970851/208648166-29f2738b-52fa-4075-85f8-1358e52b57f1.png)
+#### UTILIZATION REPORT
+The utilization summary obtained is shown in the picture below \
+![day3_risc_utilisation](https://user-images.githubusercontent.com/52970851/208653388-b13eddb8-eefb-4a46-8e13-551dad6d093b.png)
 ## DAY 4 - INTRODUCTION TO SOFA FPGA FABRIC IP
 ### SOFA - INTRODUCTION
 &emsp;  Skywater Opensource FPGAs(SOFA) are a series of open-source FPGA IPs that utilizes the open-source Skywater 130nm PDK and OpenFPGA framework. It has Open-source FPGA IP Library which contains architecture descriptions for the user to produce ready layouts. \
