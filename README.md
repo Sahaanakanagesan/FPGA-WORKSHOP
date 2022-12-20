@@ -41,10 +41,6 @@ This repository contains all the information gathered during a five day workshop
   * [DAY 5 - RISC-V CORE ON CUSTOM SOFA FABRIC](#day-5---risc-v-core-on-custom-sofa-fabric)
   * [REFERENCES](#references)
   * [ACKNOWLEDGEMENTS](#acknowledgements)
-
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
-
 ## DAY 1 - BASICS OF FPGA and XILINX VIVADO
 ### INTRODUCTION TO FPGA
 Field Programmable Gate Array (FPGA) is a reprogrammable IC which can be designed and configured by the user. Configuration can be specified using a Hardware Description Language (HDL) like Verilog, VHDL or High-level languages like C,C++,Python
