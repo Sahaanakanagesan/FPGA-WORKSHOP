@@ -302,7 +302,7 @@ The power report obtained is shown in the snippet below \
 ![DAY2_VTR_POWER](https://user-images.githubusercontent.com/52970851/208634814-68111106-8434-4c71-b316-4145aefe2cf4.png)
 #### UTILIZATION
 The following snippets describes the resource utilization of the design
-![DAY2_VTR_UTILISATION1](https://user-images.githubusercontent.com/52970851/208646727-c1b05bac-24be-4f92-b6d8-29b22c975f1b.png)
+![DAY2_VTR_UTILISATION1](https://user-images.githubusercontent.com/52970851/208646727-c1b05bac-24be-4f92-b6d8-29b22c975f1b.png) \
 ![DAY2_VTR_UTILISATION2](https://user-images.githubusercontent.com/52970851/208646737-450ac57a-65c1-4f5b-bed8-f42aa34b2ac5.png)
 ## DAY 3 - INTRODUCTION TO RISC-V CORE PROGRAMMING IN XILINX VIVADO
 RVMYTH is a RISC-V based five stage pipelined processor. The five stages are as follows:
@@ -341,7 +341,7 @@ These constraints are added as .xdc file & resynthesis is done. Followed by it, 
 ### IMPLEMENTATION
 #### IMPLEMENTED DESIGN
 The following snippets describes the implemented design of the RISCV processor \
-![day3_risc_imp_design_1](https://user-images.githubusercontent.com/52970851/208678099-81d6e8d8-aace-4c3b-b3f3-de21fcb8df36.png)
+![day3_risc_imp_design_1](https://user-images.githubusercontent.com/52970851/208678099-81d6e8d8-aace-4c3b-b3f3-de21fcb8df36.png) \
 ![day3_risc_imp_design_2](https://user-images.githubusercontent.com/52970851/208678105-80a559c7-1c0b-4a1b-a928-75e6c5486ac7.png)
 #### TIMING REPORT
 The following snippet shows the timing summary of the RISCV processor \
