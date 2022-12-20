@@ -270,14 +270,30 @@ set_output_delay -clock up_counter_clk -max 0 [get_ports {*}]
 Command for Timing analysis \
 ``` $VTR_ROOT/vpr/vpr  $VTR_ROOT/vtr_flow/arch/timing/EArch.xml  <path of pre-vpr.blif file> --route_chan_width 100  --sdc_file <path of sdc file>``` \
 Example: ``` $VTR_ROOT/vpr/vpr  $VTR_ROOT/vtr_flow/arch/timing/EArch.xml  /home/sahaanaktnj/Desktop/day2_vtr/counter.pre-vpr.blif     --route_chan_width 100   --sdc_file /home/sahaanaktnj/Desktop/day2_vtr/counter_files/counter.sdc ``` \
-The timg reports obtained are as follows : \
+The timing reports obtained are as follows : \
 SETUP TIMING REPORT:
 ![DAY2_VTR_SETUP](https://user-images.githubusercontent.com/52970851/208609581-e6d10953-2ead-4057-816c-5be70b78eb6a.png)
 HOLD TIMING REPORT:
 ![DAY2_VTR_HOLD](https://user-images.githubusercontent.com/52970851/208609871-10badb9b-5c88-4307-a066-64b79cc8e9ff.png)
-
 #### POST-SYNTHESIS SIMULATION
-
+- Post synthesis simulation is performed in Xinlinx Vivado. \
+- For making it work in Vivado add ```paramter K=1``` in the LUT_K module \
+- Generate a post synthesis file for the design using the command ``` $VTR_ROOT/vpr/vpr $VTR_ROOT/vtr_flow/arch/timing/EArch.xml <pre-vpr.blif file path> --gen_post_synthesis_netlist on```
+- Example : ``` $VTR_ROOT/vpr/vpr $VTR_ROOT/vtr_flow/arch/timing/EArch.xml /home/sahaanaktnj/Desktop/day2_vtr/counter.pre-vpr.blif --gen_post_synthesis_netlist on```
+- Add the generated post synthesis file (```up_counter_post_synthesis.v```), ```primitives.v``` file and the testbench file (```counter_tb.v```) and perform behavioural simulation 
+- Note : Make sure your post synthesis file and the primitives file has the same clock name \
+The snippet shown below describes the post synthesis simulation of the counter 
+![DAY2_VTR_POST_SYNTHESIS](https://user-images.githubusercontent.com/52970851/208644073-f90cadfa-4a01-4ce6-990d-fcd232c31375.png)
+#### POWER ESTIMATION
+Command for Power analysis \
+```$VTR_ROOT/vtr_flow/scripts/run_vtr_flow.py <verilog-path file> $VTR_ROOT/vtr_flow/arch/timing/EArch.xml  -power -cmos_tech  $VTR_ROOT/vtr_flow/tech/PTM_45nm/45nm.xml  -temp_dir .  --route_chan_width 100``` \
+Example: ```$VTR_ROOT/vtr_flow/scripts/run_vtr_flow.py  $VTR_ROOT/doc/src/quickstart/counter.v $VTR_ROOT/vtr_flow/arch/timing/EArch.xml  -power -cmos_tech  $VTR_ROOT/vtr_flow/tech/PTM_45nm/45nm.xml  -temp_dir .  --route_chan_width 100``` \
+The power report obtained is shown in the snippet below \
+![DAY2_VTR_POWER](https://user-images.githubusercontent.com/52970851/208634814-68111106-8434-4c71-b316-4145aefe2cf4.png)
+#### UTILIZATION
+The following snippets describes the resource utilization of the design
+![DAY2_VTR_UTILISATION1](https://user-images.githubusercontent.com/52970851/208646727-c1b05bac-24be-4f92-b6d8-29b22c975f1b.png)
+![DAY2_VTR_UTILISATION2](https://user-images.githubusercontent.com/52970851/208646737-450ac57a-65c1-4f5b-bed8-f42aa34b2ac5.png)
 ## DAY 3 - INTRODUCTION TO RISC-V CORE PROGRAMMING IN XILINX VIVADO
 RVMYTH is a RISC-V based five stage pipelined processor. The five stages are as follows:
 - Fetch
@@ -308,10 +324,14 @@ set property C_ENABLE_CLK_DIVIDER false [get_debug cores dbg_hub]
 set property C USER SCAN CHAIN 1 [get debug cores dbg_hub]
 connect_debug_port dbg_hub/clk [get_nets clk_IBUF_BUFG]
 ```
-These constraints are added as .xdc file & resynthesis is done. Followed by it, is the implementation
+These constraints are added as .xdc file & resynthesis is done. Followed by it, is the implementation.
 ### IMPLEMENTATION
-## TIMING REPORT
-The following snippet s
+#### TIMING REPORT
+The following snippet shows the timing summary of the RISCV processor \
+![day3_risc_timing_summary](https://user-images.githubusercontent.com/52970851/208647636-15cc5179-fd81-4bd3-bb2e-fa7771b5ebfc.png)
+#### POWER REPORT
+The power report obtained is shown in the picture below \
+![day3_risc_power](https://user-images.githubusercontent.com/52970851/208648166-29f2738b-52fa-4075-85f8-1358e52b57f1.png)
 ## DAY 4 - INTRODUCTION TO SOFA FPGA FABRIC IP
 ### SOFA - INTRODUCTION
 &emsp;  Skywater Opensource FPGAs(SOFA) are a series of open-source FPGA IPs that utilizes the open-source Skywater 130nm PDK and OpenFPGA framework. It has Open-source FPGA IP Library which contains architecture descriptions for the user to produce ready layouts. \
@@ -366,13 +386,17 @@ Similarly the snippet shown below shows the hold time report of the counter
 The following snippet shows the behavioural simulation of the counter
 ![post_impl_sim_day4](https://user-images.githubusercontent.com/52970851/208311909-c7baf85f-d482-44dd-8447-b268c0b3c7d9.png)
 ### COUNTER POWER ANALYSIS
-/home/sahaanaktnj/Desktop/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/run001/vpr_arch/counter/MIN_ROUTE_CHAN_WIDTH
+- For performing power analysis two files are need to be attached : Technology file(.xml) and core_ace_out.txt file \
+- Add the command ```--power --activity_file /home/sahaanaktnj/Desktop/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/run001/vpr_arch/counter/MIN_ROUTE_CHAN_WIDTH/core_ace_out.txt   --tech_properties  $VTR_ROOT/vtr_flow/tech/PTM_45nm/45nm.xml``` to the vpr command  
+- Save the file and ``` make runOpenFPGA ``` from the FPGA1212_QLSOFA_HD_PNR directory
+![day4_power_error](https://user-images.githubusercontent.com/52970851/208649767-96dc1a30-1d79-4d94-bd64-0aade701d523.png)
 ## DAY 5 - RISC-V CORE ON CUSTOM SOFA FABRIC 
 The RISC-V based RVMyth is now implemented on the SOFA. The set of files which are needed to be modified are
 - task_simualtion.conf (Note: add your verilog file path in ``` [BENCHMARKS] ``` and change the top module name in ``` [SYNTHESIS_PARAM] ```)
 - generate_testbench.openfpga (Note: change the vpr command & remove the ``` --route_chan_width ${OPENFPGA_VPR_ROUTE_CHAN_WIDTH} ``` command)
 - vpr_arch.xml (Note: comment lines 157,158 & 259)
-Save all the files and ``` make runOpenFPGA ``` from the FPGA1212_QLSOFA_HD_PNR directory 
+- Save all the files and ``` make runOpenFPGA ``` from the FPGA1212_QLSOFA_HD_PNR directory 
+![day5_error](https://user-images.githubusercontent.com/52970851/208649839-b3408b8a-7838-4094-996d-733a3c7b3e79.png)
 ## REFERENCES
 - Xilinx Vivado : https://docs.xilinx.com/r/en-US/ug888-vivado-design-flows-overview-tutorial
 - OpenFPGA : https://openfpga.readthedocs.io/en/master/
@@ -381,6 +405,7 @@ Save all the files and ``` make runOpenFPGA ``` from the FPGA1212_QLSOFA_HD_PNR 
 - VPR : https://docs.verilogtorouting.org/en/latest/vpr/
 - Github Writing : https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 - Github Table of Contents : https://ecotrust-canada.github.io/markdown-toc/
+- RISCV : https://github.com/ShonTaware/RISC-V_Core_4_Stage
 ## ACKNOWLEDGEMENTS
 - [ Kunal Gosh ](https://github.com/kunalg123) Co-Founder, VLSI System Design
 - [ Nanditha Rao ](https://github.com/nandithaec) Assistant Professor, IIIT Bangalore
