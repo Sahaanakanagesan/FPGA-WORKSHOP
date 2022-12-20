@@ -33,11 +33,14 @@ This repository contains all the information gathered during a five day workshop
 - [DAY 3 - INTRODUCTION TO RISC-V CORE PROGRAMMING IN XILINX VIVADO](#day-3---introduction-to-risc-v-core-programming-in-xilinx-vivado)
   * [BEHAVIOURAL SIMULATION](#behavioural-simulation-1)
   * [ELABORATION](#elaboration-1)
+  * [I/O PLANNING](#i-o-planning-1)
   * [SYNTHESIS](#synthesis-1)
   * [CONSTRAINTS](#constraints-1)
   * [IMPLEMENTATION](#implementation-1)
+    + [IMPLEMENTED DESIGN](#implemented-design)
     + [TIMING REPORT](#timing-report)
     + [POWER REPORT](#power-report-1)
+    + [UTILIZATION REPORT](#utilization-report-1)
 - [DAY 4 - INTRODUCTION TO SOFA FPGA FABRIC IP](#day-4---introduction-to-sofa-fpga-fabric-ip)
   * [SOFA - INTRODUCTION](#sofa---introduction)
   * [Steps to install & work with SOFA](#steps-to-install---work-with-sofa)
@@ -336,6 +339,10 @@ connect_debug_port dbg_hub/clk [get_nets clk_IBUF_BUFG]
 ```
 These constraints are added as .xdc file & resynthesis is done. Followed by it, is the implementation.
 ### IMPLEMENTATION
+#### IMPLEMENTED DESIGN
+The following snippets describes the implemented design of the RISCV processor \
+![day3_risc_imp_design_1](https://user-images.githubusercontent.com/52970851/208678099-81d6e8d8-aace-4c3b-b3f3-de21fcb8df36.png)
+![day3_risc_imp_design_2](https://user-images.githubusercontent.com/52970851/208678105-80a559c7-1c0b-4a1b-a928-75e6c5486ac7.png)
 #### TIMING REPORT
 The following snippet shows the timing summary of the RISCV processor \
 ![day3_risc_timing_summary](https://user-images.githubusercontent.com/52970851/208647636-15cc5179-fd81-4bd3-bb2e-fa7771b5ebfc.png)
