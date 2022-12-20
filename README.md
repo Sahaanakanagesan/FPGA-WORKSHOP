@@ -1,7 +1,7 @@
 # FPGA-WORKSHOP
 This repository contains all the information gathered during a five day workshop on [ FPGA - Fabric, Design and Architecture by VSD ](https://www.vlsisystemdesign.com/fpga/) conducted from 14/12/2022 to 18/12/2022 which covers tools like Xilinx Vivado, Open FPGA, VTR, VPR and SOFA
 ## TABLE OF CONTENTS
-[ DAY 1 ]
+[ DAY 1 ] ( https://github.com/Sahaanakanagesan/FPGA-WORKSHOP/blob/main/README.md#day-1---basics-of-fpga--xilinx-vivado )
 ## DAY 1 - BASICS OF FPGA & XILINX VIVADO
 ### INTRODUCTION TO FPGA
 Field Programmable Gate Array (FPGA) is a reprogrammable IC which can be designed and configured by the user. Configuration can be specified using a Hardware Description Language (HDL) like Verilog, VHDL or High-level languages like C,C++,Python
