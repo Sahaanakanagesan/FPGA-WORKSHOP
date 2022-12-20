@@ -278,7 +278,7 @@ Command for Timing analysis \
 Example: ``` $VTR_ROOT/vpr/vpr  $VTR_ROOT/vtr_flow/arch/timing/EArch.xml  /home/sahaanaktnj/Desktop/day2_vtr/counter.pre-vpr.blif     --route_chan_width 100   --sdc_file /home/sahaanaktnj/Desktop/day2_vtr/counter_files/counter.sdc ``` \
 The timg reports obtained are as follows : \
 SETUP TIMING REPORT:
-
+![DAY2_VTR_SETUP](https://user-images.githubusercontent.com/52970851/208609581-e6d10953-2ead-4057-816c-5be70b78eb6a.png)
 HOLD TIMING REPORT:
 
 #### POST-SYNTHESIS SIMULATION
