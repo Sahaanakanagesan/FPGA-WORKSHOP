@@ -61,9 +61,7 @@ Field Programmable Gate Array (FPGA) is a reprogrammable IC which can be designe
 - High performance computing
 ### ARCHITECTURE
 The following picture shows the basic architecture of a FPGA.
-
 ![fpga arch](https://user-images.githubusercontent.com/52970851/208061986-016f74aa-3f6d-4e76-b300-1692e674142e.jpg)
-
 The basic components of a FPGA are as follows
 1. **Configurable Logic Blocks (CLB)**
    - Consists of a set of Look-up-Tables (LUT), Carry chain, Multiplexers, Flipflops and Latches 
@@ -81,7 +79,6 @@ The following snippet explains the flow of FPGA design methodology
 ![DESIGN METHOD](https://user-images.githubusercontent.com/52970851/208065160-47c3f771-95fb-4d4b-a0a1-e0d39c0f5108.png)
 ### BASYS3 FPGA BOARD
 Basys3 FPGA board with its callouts is shown in the picture below.
-
 ![basys3_board](https://user-images.githubusercontent.com/52970851/208233474-e25bf0c9-f168-4e95-af06-f863bb5d9b91.png)
 |CALL OUT|COMPONENT DESCRIPTION|CALL OUT|DESCRIPTION|
 |-------|-------|-------|-------|
@@ -157,7 +154,6 @@ endmodule
 ```
 #### BEHAVIOURAL SIMULATION
 The following snippet indicates the behavioural simulation of the 4-bit Up counter with 100MHz source clock.
-
 ![1_beh_sim](https://user-images.githubusercontent.com/52970851/208242060-9c1c6ce3-3844-4395-93f3-3eac6844ec6d.png)
 #### ELABORATION
 Next comes the Elaboration step which performs the following: 
@@ -193,7 +189,6 @@ set_property PACKAGE_PIN P3 [get_ports {count[0]}]
 set_property PACKAGE_PIN W5 [get_ports clk]
 set_property PACKAGE_PIN R2 [get_ports reset]
 create_clock -period 10.000 -name clk -waveform {0.000 5.000} [get_ports clk]
-
 ```
 The following snippet shows the post-synthesis timing summary after the constraints are given. It can be seen that the setup and hold slacks are met.
 ![day1_counter_synthesis_with_constraints](https://user-images.githubusercontent.com/52970851/208353122-97aee166-0570-4833-82d7-ba312a04e09e.png)
@@ -377,15 +372,8 @@ The following snippet shows the behavioural simulation of the counter
 The RISC-V based RVMyth is now implemented on the SOFA. The set of files which are needed to be modified are
 - task_simualtion.conf (Note: add your verilog file path in ``` [BENCHMARKS] ``` and change the top module name in ``` [SYNTHESIS_PARAM] ```)
 - generate_testbench.openfpga (Note: change the vpr command & remove the ``` --route_chan_width ${OPENFPGA_VPR_ROUTE_CHAN_WIDTH} ``` command)
-- vpr_arch.xml (Note: comment lines 154,155 & 256)
-Save all the files and ``` make runOpenFPGA ``` from the FPGA1212_QLSOFA_HD_PNR directory
-
-
-
-
-
-
-
+- vpr_arch.xml (Note: comment lines 157,158 & 259)
+Save all the files and ``` make runOpenFPGA ``` from the FPGA1212_QLSOFA_HD_PNR directory 
 ## REFERENCES
 - Xilinx Vivado : https://docs.xilinx.com/r/en-US/ug888-vivado-design-flows-overview-tutorial
 - OpenFPGA : https://openfpga.readthedocs.io/en/master/
