@@ -239,9 +239,16 @@ Versatile Place and Route(VPR) is an open-source CAD tool which is useful for th
   - Analyse
     - Analyzes the resulting implementation
     - Producing information about:
-      -Resource usage (e.g. block types, wiring)
-      -Timing (e.g. critical path delays and timing paths)
-      -Power (e.g. total power used, power broken down by blocks)
+      - Resource usage (e.g. block types, wiring)
+      - Timing (e.g. critical path delays and timing paths)
+      - Power (e.g. total power used, power broken down by blocks)
+ The VPR flow is marked in orange in the picture shown below
+ ![DAY2_VPR_FLOW](https://user-images.githubusercontent.com/52970851/208599322-a7601f90-3c31-4e7b-bcef-37fa25187ed9.png)
+#### RUN VPR ON A PRE-SYNTHESIZED CIRCUIT
+Command for invoking VPR \
+``` $VTR_ROOT/vpr/vpr  $VTR_ROOT/vtr_flow/arch/timing/EArch.xml  <blif-file path>  --route_chan_width 100 ``` 
+Command for visualizing the circuit (GUI) with analysis \
+``` $VTR_ROOT/vpr/vpr  $VTR_ROOT/vtr_flow/arch/timing/EArch.xml  <blif-file path>  --route_chan_width 100 --analysis --disp on ```
 
 ### VTR
 &emsp; The output files of VPR flow are .net, .place, .route and .log file
