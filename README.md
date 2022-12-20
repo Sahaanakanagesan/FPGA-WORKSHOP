@@ -8,18 +8,18 @@ This repository contains all the information gathered during a five day workshop
     + [ARCHITECTURE](#architecture)
     + [FPGA DESIGN METHODOLOGY](#fpga-design-methodology)
     + [BASYS3 FPGA BOARD](#basys3-fpga-board)
-  * [4-BIT COUNTER EXAMPLE IN XILINX VIVADO](#4-bit-counter-example-in-xilinx-vivado)
-    + [Verilog code](#verilog-code)
-    + [TEST BENCH](#test-bench)
-    + [BEHAVIOURAL SIMULATION](#behavioural-simulation)
-    + [ELABORATION](#elaboration)
-    + [I/O PLANNING](#i-o-planning)
-    + [SYNTHESIS](#synthesis)
-    + [CONSTRAINTS](#constraints)
-    + [IMPLEMENTATION](#implementation)
-      - [UTILIZATION REPORT](#utilization-report)
-      - [POWER REPORT](#power-report)
-  * [VIO -VIRTUAL INPUT OUTPUT](#vio--virtual-input-output)
+    + [4-BIT COUNTER EXAMPLE IN XILINX VIVADO](#4-bit-counter-example-in-xilinx-vivado)
+      - [Verilog code](#verilog-code)
+      - [TEST BENCH](#test-bench)
+      - [BEHAVIOURAL SIMULATION](#behavioural-simulation)
+      - [ELABORATION](#elaboration)
+      - [I/O PLANNING](#i-o-planning)
+      - [SYNTHESIS](#synthesis)
+      - [CONSTRAINTS](#constraints)
+      - [IMPLEMENTATION](#implementation)
+        * [UTILIZATION REPORT](#utilization-report)
+        * [POWER REPORT](#power-report)
+    + [VIO -VIRTUAL INPUT OUTPUT](#vio--virtual-input-output)
   * [DAY 2 - OPENFPGA , VTR & VPR](#day-2---openfpga---vtr---vpr)
     + [OPENFPGA](#openfpga)
     + [VPR](#vpr)
@@ -43,6 +43,7 @@ This repository contains all the information gathered during a five day workshop
   * [ACKNOWLEDGEMENTS](#acknowledgements)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 ## DAY 1 - BASICS OF FPGA and XILINX VIVADO
 ### INTRODUCTION TO FPGA
@@ -96,8 +97,8 @@ Basys3 FPGA board with its callouts is shown in the picture below.
 |6|LEDs(16)|14|External power connector|
 |7|Pushbuttons(5)|15|Power switch|
 |8|Programming LED|16|Power select jumper|
-## 4-BIT COUNTER EXAMPLE IN XILINX VIVADO
-### Verilog code
+### 4-BIT COUNTER EXAMPLE IN XILINX VIVADO
+#### Verilog code
 ```
 `timescale 1ns / 1ps 
 ////////////////////////////////////////////////////////////////////////////////// 
@@ -138,7 +139,7 @@ else
  end 
 endmodule
 ```
-### TEST BENCH
+#### TEST BENCH
 ```
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
@@ -158,11 +159,11 @@ always
 #5 clk=~clk;    
 endmodule
 ```
-### BEHAVIOURAL SIMULATION
+#### BEHAVIOURAL SIMULATION
 The following snippet indicates the behavioural simulation of the 4-bit Up counter with 100MHz source clock.
 
 ![1_beh_sim](https://user-images.githubusercontent.com/52970851/208242060-9c1c6ce3-3844-4395-93f3-3eac6844ec6d.png)
-### ELABORATION
+#### ELABORATION
 Next comes the Elaboration step which performs the following: 
 - Linting checks in the code
 - Deduction of logic from the RTL design
@@ -170,16 +171,16 @@ Next comes the Elaboration step which performs the following:
 - Application of constraints if present \
 Once eloboration is done the elaborated design can be viewed as follows:
 ![2_rtl_schem_counter png](https://user-images.githubusercontent.com/52970851/208243021-2f679470-fa9f-4a77-8eda-34abc01ff4c2.jpg)
-### I/O PLANNING 
+#### I/O PLANNING 
 In I/O planning the ports of the designed module are assigned with their FPGA pins and the IO standard is set to LVCMOS33 i.e., the supply voltage is set as 3-3.3V. The picture shown below describes the corresponding pins assigned to the module ports of the 4-bit counter. \
 ![3_IO_PLANNING](https://user-images.githubusercontent.com/52970851/208244468-b74ac7d8-a50d-49c1-b1c2-765f7ff1a6ec.jpg)
 &emsp; Next step : Save the pin assignments as .xdc file. The following picture shows the constraints.xdc file for the counter designed.
-### SYNTHESIS
+#### SYNTHESIS
 &emsp; Synthesis is the process where the HDL is complied and the RTL-specified design is converted into a gate-level netlist. \
 The following snippet shows the synthesized design.
 ![synthesized design_counter_day1](https://user-images.githubusercontent.com/52970851/208301173-a464b263-4b94-4c76-a012-e18e7bc34f9f.jpg)
 &emsp; The timing summary are shown as NA since there are no user specified constraints at present. Timing constraints are now set in the Constraints Wizard in Synthesis Tab. A 100MHz clock is set and the corresponding Tcl command is added in the constraints file.
-### CONSTRAINTS
+#### CONSTRAINTS
 Constraints files act as a guide for the FPGA Synthesis and Implementation processes. They have information about the ports declaration and timing information like input/output delays and clock constraints. In simple words it gives performance specfications so that the specifications can be met. \
 The constraints for this counter example is as follows:
 ```
@@ -200,18 +201,18 @@ create_clock -period 10.000 -name clk -waveform {0.000 5.000} [get_ports clk]
 ```
 The following snippet shows the post-synthesis timing summary after the constraints are given. It can be seen that the setup and hold slacks are met.
 ![day1_counter_synthesis_with_constraints](https://user-images.githubusercontent.com/52970851/208353122-97aee166-0570-4833-82d7-ba312a04e09e.png)
-### IMPLEMENTATION
+#### IMPLEMENTATION
 Next step is the implementation. Implementation is the process of placing and routing the netlist onto the FPGA device resources. \
 The following snippet shows the implemented schematic of the counter
 ![day1_counter_implementation_schematic](https://user-images.githubusercontent.com/52970851/208353864-040384f4-e18a-4ca3-9dd1-bf8c2577f474.png)
 There are various reports obtained after implementation which area as follows: \
-#### UTILIZATION REPORT
+##### UTILIZATION REPORT
 The following picture gives a summary of the device utilization in percentage.
 ![day1_counter_utilization](https://user-images.githubusercontent.com/52970851/208354472-0c05c507-decb-4fca-9523-8d90f6217021.png)
-#### POWER REPORT
+##### POWER REPORT
 The snippet shown below gives the power analysis report of the implemented netlist of the counter
 ![day1_counter_power](https://user-images.githubusercontent.com/52970851/208354948-3f2616fd-24b0-4d1b-be4a-1f3ba45ad39e.png)
-## VIO -VIRTUAL INPUT OUTPUT
+### VIO -VIRTUAL INPUT OUTPUT
 &emsp; Virtual Input-Output (VIO) is an IP inbuilt with Xilinx Vivado. It is used for virtually providing inputs and view outputs.The number and width of i/o is customizable. The inputs of the functioning module will be generated by the VIO and the outputs of the functioning module will be probed by the VIO
 ## DAY 2 - OPENFPGA , VTR & VPR
 ### OPENFPGA
