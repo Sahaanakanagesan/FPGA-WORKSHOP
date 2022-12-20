@@ -215,8 +215,34 @@ The snippet shown below gives the power analysis report of the implemented netli
  - OpenFPGA is a Open-source framework which can be utilized to generate a fabric for a highly-customized FPGA
  - It uses automation techniques and reduces the development cycle of a FPGA from a year to just a few days
  - It also provides facilities for bitstream generation and verification
- - It generates Verilog netlists and Verilog testbenches
+ - It generates Verilog netlists based on an XML-based description file and Verilog testbenches for validation
+ - Open FPGA mainly consists of the following parts:
+   - FPGA-Verilog
+   - FPGA-SDC
+   - FPGA-Bitstream
+The OpenFPGA framework is as shown in the picture below:
+![DAY2_OPENFPGA_FRAMEWORK](https://user-images.githubusercontent.com/52970851/208594831-55d5c099-32b2-4e01-a3f4-8d315068b17e.png)
 ### VPR
+Versatile Place and Route(VPR) is an open-source CAD tool which is useful for the exploration of higly-customizable FPFA, mainly used for academic purposes.
+- Input File : Technology-mapped user design (.blif) and FPGA Architectute File (.xml)
+- Output File : FPGA configuration (.place, .route, .net, .log) and Peformance statistics (like area and delay (.rpt))
+- Steps performed:
+  - Pack
+    - Combines primitive netlist blocks (e.g. LUTs, FFs) into groups called Complex Blocks (as specified in the FPGA architecture file)
+    - Results are written into a .net file
+  - Place
+    - Assigns a location to the Complex Blocks with the FPGA grid 
+    - Optimizes wirelength and timing
+    - Results are written into a .place file
+  - Route
+    - Determines how to connect the placed Complex Blocks together, according to the netlist connectivity and the routing resources of the FPGA chip
+  - Analyse
+    - Analyzes the resulting implementation
+    - Producing information about:
+      -Resource usage (e.g. block types, wiring)
+      -Timing (e.g. critical path delays and timing paths)
+      -Power (e.g. total power used, power broken down by blocks)
+
 ### VTR
 &emsp; The output files of VPR flow are .net, .place, .route and .log file
 
@@ -326,7 +352,8 @@ Save all the files and ``` make runOpenFPGA ``` from the FPGA1212_QLSOFA_HD_PNR 
 - Xilinx Vivado : https://docs.xilinx.com/r/en-US/ug888-vivado-design-flows-overview-tutorial
 - OpenFPGA : https://openfpga.readthedocs.io/en/master/
 - SOFA : https://github.com/lnis-uofu/SOFA
-- VTR : https://docs.verilogtorouting.org/en/latest/
+- VTR : https://docs.verilogtorouting.org/en/latest/vtr/
+- VPR : https://docs.verilogtorouting.org/en/latest/vpr/
 - Github Writing : https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 - Github Table of Contents : https://ecotrust-canada.github.io/markdown-toc/
 ## ACKNOWLEDGEMENTS
