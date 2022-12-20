@@ -111,7 +111,6 @@ if (reset)
 else 
     begin
         count_reg <= count_reg + 1; 
-        //if (count_reg == 26'h33) // for synthesis 
         if (count_reg == 26'd12) // for simulation 
         begin
             clk_div <= ~ clk_div; 
