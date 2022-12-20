@@ -316,8 +316,8 @@ The snippet shown below indicates the behavioural simulation of the addition of 
 The elaborated step is done and the I/O planning report (with standard LVCMOS33) is obtained as follows:
 ![day3_risc_ioplan](https://user-images.githubusercontent.com/52970851/208370785-8f3a4f9d-143b-471e-9ffd-b953baba4d89.png)
 ### I/O PLANNING
-The picture shown below describes the I/O plam of the module. \
-
+The picture shown below describes the I/O plan of the module. \
+![day3_risc_ioplan](https://user-images.githubusercontent.com/52970851/208673241-333548c6-2320-45d9-b03e-c74a864c9fb9.png)
 ### SYNTHESIS
 With the elobaration being done, next step is the Synthesis. The picture shown below indicates the synthsized schematic of the design
 ![day3_risc_synthesized_schematic](https://user-images.githubusercontent.com/52970851/208371199-a9821b70-f43e-4d68-b319-b777ca10292e.png)
