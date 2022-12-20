@@ -241,17 +241,47 @@ Versatile Place and Route(VPR) is an open-source CAD tool which is useful for th
     - Producing information about:
       - Resource usage (e.g. block types, wiring)
       - Timing (e.g. critical path delays and timing paths)
-      - Power (e.g. total power used, power broken down by blocks)
+      - Power (e.g. total power used, power broken down by blocks) \
  The VPR flow is marked in orange in the picture shown below
  ![DAY2_VPR_FLOW](https://user-images.githubusercontent.com/52970851/208599322-a7601f90-3c31-4e7b-bcef-37fa25187ed9.png)
 #### RUN VPR ON A PRE-SYNTHESIZED CIRCUIT
 Command for invoking VPR \
-``` $VTR_ROOT/vpr/vpr  $VTR_ROOT/vtr_flow/arch/timing/EArch.xml  <blif-file path>  --route_chan_width 100 ``` 
+``` $VTR_ROOT/vpr/vpr  $VTR_ROOT/vtr_flow/arch/timing/EArch.xml  <blif-file path>  --route_chan_width 100 ``` \
+Example : ```$VTR_ROOT/vpr/vpr   $VTR_ROOT/vtr_flow/arch/timing/EArch.xml $VTR_ROOT/vtr_flow/benchmarks/blif/tseng.blif   --route_chan_width 100 ``` \
 Command for visualizing the circuit (GUI) with analysis \
-``` $VTR_ROOT/vpr/vpr  $VTR_ROOT/vtr_flow/arch/timing/EArch.xml  <blif-file path>  --route_chan_width 100 --analysis --disp on ```
-
+``` $VTR_ROOT/vpr/vpr  $VTR_ROOT/vtr_flow/arch/timing/EArch.xml  <blif-file path>  --route_chan_width 100 --analysis --disp on ``` \
+The snippet shown below gives a GUI for the design tseng.blif
+![DAY2_VPR_GUI](https://user-images.githubusercontent.com/52970851/208600408-637141d6-3529-469b-ac12-4dedde7a5003.png)
 ### VTR
-&emsp; The output files of VPR flow are .net, .place, .route and .log file
+Verilog-to-Routing(VTR) tool is a open-source framework for designing FPGA architectures. \
+- Input File : Verilog description of the digital circuit (.v) and FPGA Architectute File (.xml)
+- Output File : Peformance statistics (like area and delay (.rpt), .log)
+- Note: While running the VTR flow with the ```.v``` file initially, it generates ```pre-vpr.blif``` file using which timing analysis, power analysis & post synthesis simulation is performed 
+- Steps performed:
+  - Elaboration & Synthesis (Odin II)
+  - Logic Optimization & Technology Mapping (ABC)
+  - Packing, Placement, Routing & Timing Analysis (VPR) \
+#### RUN VTR IN AUTOMATIC FLOW
+Command for automatic running of VTR \
+``` $VTR_ROOT/vtr_flow/scripts/run_vtr_flow.py <verilog file-path> $VTR_ROOT/vtr_flow/arch/timing/EArch.xml -temp_dir . --route_chan_width 100 ``` \
+Example: ``` $VTR_ROOT/vtr_flow/scripts/run_vtr_flow.py /home/sahaanaktnj/Desktop/day2_vtr/counter_files/counter.v $VTR_ROOT/vtr_flow/arch/timing/EArch.xml -temp_dir . --route_chan_width 100 ```
+#### TIMING
+For timing analysis provide a sdc file \
+The sdc file used here is as follows:
+```
+create_clock -period 20  up_counter_clk
+set_input_delay -clock up_counter_clk -max 0 [get_ports {*}]
+set_output_delay -clock up_counter_clk -max 0 [get_ports {*}]
+```
+Command for Timing analysis \
+``` $VTR_ROOT/vpr/vpr  $VTR_ROOT/vtr_flow/arch/timing/EArch.xml  <path of pre-vpr.blif file> --route_chan_width 100  --sdc_file <path of sdc file>``` \
+Example: ``` $VTR_ROOT/vpr/vpr  $VTR_ROOT/vtr_flow/arch/timing/EArch.xml  /home/sahaanaktnj/Desktop/day2_vtr/counter.pre-vpr.blif     --route_chan_width 100   --sdc_file /home/sahaanaktnj/Desktop/day2_vtr/counter_files/counter.sdc ``` \
+The timg reports obtained are as follows : \
+SETUP TIMING REPORT:
+
+HOLD TIMING REPORT:
+
+#### POST-SYNTHESIS SIMULATION
 
 ## DAY 3 - INTRODUCTION TO RISC-V CORE PROGRAMMING IN XILINX VIVADO
 RVMYTH is a RISC-V based five stage pipelined processor. The five stages are as follows:
