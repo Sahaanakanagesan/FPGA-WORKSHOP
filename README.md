@@ -280,6 +280,7 @@ The timg reports obtained are as follows : \
 SETUP TIMING REPORT:
 ![DAY2_VTR_SETUP](https://user-images.githubusercontent.com/52970851/208609581-e6d10953-2ead-4057-816c-5be70b78eb6a.png)
 HOLD TIMING REPORT:
+![DAY2_VTR_HOLD](https://user-images.githubusercontent.com/52970851/208609871-10badb9b-5c88-4307-a066-64b79cc8e9ff.png)
 
 #### POST-SYNTHESIS SIMULATION
 
